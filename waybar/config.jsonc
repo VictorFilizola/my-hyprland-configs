@@ -1,5 +1,6 @@
 {
-  "layer": "top",
+  "layer": "overlay",
+  "exclusive": "false",
   "position": "top",
   "height": 30,
   "spacing": 4,

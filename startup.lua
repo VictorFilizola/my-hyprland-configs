@@ -1,3 +1,4 @@
+hl.exec_cmd("pkill -x waybar || true; waybar")
 hl.exec_cmd("waybar")
 
 -- Add wallpaper (boot + reload)
