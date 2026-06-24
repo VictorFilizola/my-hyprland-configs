@@ -22,7 +22,7 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
@@ -32,10 +32,10 @@ hl.bind(mainMod .. " + SHIFT + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-	local key = i % 10 -- 10 maps to key 0
+-- Switch workspaces with mainMod + Y/U/I/O/P (1-5)
+-- Move active window to a workspace with mainMod + SHIFT + Y/U/I/O/P
+local workspaceKeys = { "Y", "U", "I", "O", "P" }
+for i, key in ipairs(workspaceKeys) do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end

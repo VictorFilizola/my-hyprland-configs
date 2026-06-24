@@ -1,3 +1,5 @@
+/* Colors: see ~/.config/hypr/colors.lua */
+
 * {
   border: none;
   border-radius: 0;
@@ -33,13 +35,13 @@ window#waybar:hover {
 /* Clock */
 #clock {
   padding: 0 12px;
-  color: #cccccc;
+  color: #ebdbb2;
 }
 
 /* Pulseaudio */
 #pulseaudio {
   padding: 0 10px;
-  color: #cccccc;
+  color: #ebdbb2;
 }
 
 #pulseaudio.muted {
@@ -49,7 +51,7 @@ window#waybar:hover {
 /* Network */
 #network {
   padding: 0 10px;
-  color: #cccccc;
+  color: #ebdbb2;
 }
 
 #network.disconnected {

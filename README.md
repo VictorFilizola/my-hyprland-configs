@@ -7,6 +7,7 @@ Personal Hyprland environment — Lua-based config, dwindle layout, multimedia O
 | File              | Purpose                                                                                         |
 | ----------------- | ----------------------------------------------------------------------------------------------- |
 | `hyprland.lua`    | Entry point — requires all modules in order                                                     |
+| `colors.lua`      | Centralized color palette (accent, surface, muted, text, shadow)                                |
 | `env.lua`         | Environment variables (cursor size, Qt theme)                                                   |
 | `monitors.lua`    | Display configuration (auto-detect preferred)                                                   |
 | `input.lua`       | Keyboard layout (`us-intl`), mouse/touchpad, per-device sensitivity, 3-finger workspace gesture |
@@ -26,14 +27,14 @@ Mod key: `SUPER` (Windows key)
 | `SUPER + Return`                | Terminal (kitty)                                 |
 | `SUPER + Q`                     | Close window                                     |
 | `SUPER + E`                     | File manager (dolphin)                           |
-| `SUPER + R`                     | App launcher (rofi)                              |
+| `SUPER + Space`                 | App launcher (rofi)                              |
 | `SUPER + M`                     | Shutdown menu                                    |
 | `SUPER + Escape`                | Lock screen (hyprlock)                           |
 | `SUPER + V`                     | Toggle float                                     |
 | `SUPER + P`                     | Toggle pseudo-tile                               |
 | `SUPER + J`                     | Toggle split direction                           |
-| `SUPER + 0-9`                   | Switch workspace                                 |
-| `SUPER + Shift + 0-9`           | Move window to workspace                         |
+| `SUPER + Y/U/I/O/P`             | Switch workspace 1-5                             |
+| `SUPER + Shift + Y/U/I/O/P`     | Move window to workspace 1-5                     |
 | `SUPER + left/right`            | Previous/next workspace                          |
 | `SUPER + Shift + arrows`        | Move focus                                       |
 | `SUPER + drag (LMB)`            | Move window                                      |
