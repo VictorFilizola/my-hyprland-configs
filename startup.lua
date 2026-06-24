@@ -1,6 +1,12 @@
--- Add Waybar
+-- Add Waybar - custom taskbar for hyprland
 hl.exec_cmd("pkill -x waybar || true; waybar")
 hl.exec_cmd("waybar")
+
+-- Add swayosd-server - custom daemon to show graphically volume and brightness changes
+hl.exec_cmd("pkill -x swayosd-server || true; swayosd-server")
+
+-- Add swaync - custom notifications daemon
+hl.exec_cmd("pkill -x swaync || true; swaync")
 
 -- Add wallpaper (boot + reload)
 hl.on("hyprland.start", function()
