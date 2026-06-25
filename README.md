@@ -15,7 +15,7 @@ Personal Hyprland environment — Lua-based config, dwindle layout, multimedia O
 | `animations.lua`  | Bezier curves, spring presets, window/layer/workspace animations                                |
 | `programs.lua`    | User-facing app shortcuts (terminal, file manager, launcher, browser)                           |
 | `keybinds.lua`    | All keybinds — window management, media keys, screenshots, workspace nav                        |
-| `startup.lua`     | Daemons launched at start (Waybar, SwayOSD, SwayNC, hypridle, swaybg)                           |
+| `startup.lua`     | Daemons launched at start (Waybar, SwayOSD, SwayNC, hypridle, swaybg, nm-applet, blueman)       |
 | `windowrules.lua` | Window rules — suppress maximize, fix XWayland drags, float hyprland-run                        |
 
 ## Keybinds
@@ -26,9 +26,9 @@ Mod key: `SUPER` (Windows key)
 | ------------------------------- | ------------------------------------------------ |
 | `SUPER + Return`                | Terminal (kitty)                                 |
 | `SUPER + Q`                     | Close window                                     |
-| `SUPER + E`                     | File manager (dolphin)                           |
+| `SUPER + E`                     | File manager (nemo)                              |
 | `SUPER + Space`                 | App launcher (rofi)                              |
-| `SUPER + M`                     | Shutdown menu                                    |
+| `SUPER + M`                     | Powermenu (wlogout)                              |
 | `SUPER + Escape`                | Lock screen (hyprlock)                           |
 | `SUPER + V`                     | Toggle float                                     |
 | `SUPER + P`                     | Toggle pseudo-tile                               |
@@ -59,20 +59,22 @@ Mod key: `SUPER` (Windows key)
 
 ### Daemons (auto-started in startup.lua)
 
-| Package    | Purpose                                                 |
-| ---------- | ------------------------------------------------------- |
-| `waybar`   | Status bar                                              |
-| `swayosd`  | Volume/brightness OSD (swayosd-client + swayosd-server) |
-| `swaync`   | Notification daemon                                     |
-| `hypridle` | Idle management (auto-lock, suspend)                    |
-| `swaybg`   | Wallpaper setter                                        |
+| Package                                 | Purpose                                                 |
+| --------------------------------------- | ------------------------------------------------------- |
+| `waybar`                                | Status bar                                              |
+| `swayosd`                               | Volume/brightness OSD (swayosd-client + swayosd-server) |
+| `swaync`                                | Notification daemon                                     |
+| `hypridle`                              | Idle management (auto-lock, suspend)                    |
+| `swaybg`                                | Wallpaper setter                                        |
+| `network-manager-applet` (`nm-applet`)  | WiFi network tray applet                                |
+| `blueman` (`blueman-applet`)            | Bluetooth tray applet + manager                         |
 
 ### Applications
 
 | Package                        | Purpose                                        |
 | ------------------------------ | ---------------------------------------------- |
 | `kitty`                        | Terminal emulator                              |
-| `dolphin`                      | File manager                                   |
+| `nemo`                         | File manager                                   |
 | `rofi` or `rofi-lbonn-wayland` | App launcher (Wayland-native fork recommended) |
 | `brave`                        | Web browser                                    |
 
@@ -83,16 +85,16 @@ Mod key: `SUPER` (Windows key)
 | `hyprshot`    | Screenshot tool (AUR: `hyprshot` or `hyprshot-git`) |
 | `swappy`      | Screenshot annotation                               |
 | `hyprlock`    | Screen locker                                       |
+| `wlogout`     | Powermenu (logout/reboot/shutdown/suspend/lock)     |
 | `wireplumber` | Audio routing (provides `wpctl`)                    |
 | `playerctl`   | Media player control                                |
 | `psmisc`      | Provides `killall` (for swaybg restart)             |
 | `procps-ng`   | Provides `pkill` (for daemon restarts)              |
 
-### Install (Arch)
+### Install (CachyOS / Arch)
 
 ```bash
-sudo pacman -S hyprland waybar swaync hypridle swaybg kitty dolphin rofi-lbonn-wayland swappy hyprlock wireplumber playerctl
-paru -S hyprshot-git swayosd
+sudo pacman -S hyprland waybar swaync hypridle swaybg kitty nemo rofi-lbonn-wayland swappy hyprlock wireplumber playerctl wlogout network-manager-applet blueman swayosd
 ```
 
 ## SwayOSD — systemd backend (required)

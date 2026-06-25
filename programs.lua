@@ -1,6 +1,6 @@
 return {
 	terminal = "kitty",
-	fileManager = "dolphin",
+	fileManager = "nemo",
 	menu = "rofi -show drun -modi drun,window",
 	browser = "brave",
 }

@@ -20,6 +20,27 @@ hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
+
+-- Toggles current window in and out of tiling mode
+hl.bind(mainMod .. " + G", function()
+	local win = hl.get_active_window()
+	if not win then return end
+
+	local was_floating = win.floating
+	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+	if not was_floating then
+		local mon = hl.get_active_monitor()
+		if mon then
+			hl.dispatch(hl.dsp.window.resize({
+				x = math.floor(mon.width * 0.5),
+				y = math.floor(mon.height * 0.5),
+				relative = false,
+			}))
+		end
+		hl.dispatch(hl.dsp.window.center())
+	end
+end)
+
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
