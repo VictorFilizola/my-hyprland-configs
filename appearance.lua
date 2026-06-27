@@ -8,7 +8,7 @@ local colors = require("colors")
 hl.config({
 	general = {
 		gaps_in = 4,
-		gaps_out = 15,
+		gaps_out = 10,
 
 		border_size = 2,
 
