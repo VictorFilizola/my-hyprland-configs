@@ -16,15 +16,17 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 -- closeWindowBind:set_enabled(false)
-hl.bind(
-	mainMod .. " + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
-)
+-- hl.bind(
+-- 	mainMod .. " + M",
+-- 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+-- )
 
 -- Toggles current window in and out of tiling mode
 hl.bind(mainMod .. " + G", function()
 	local win = hl.get_active_window()
-	if not win then return end
+	if not win then
+		return
+	end
 
 	local was_floating = win.floating
 	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
@@ -41,10 +43,13 @@ hl.bind(mainMod .. " + G", function()
 	end
 end)
 
-hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=GNOME gnome-control-center"))
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("hyprmod"))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=GNOME gnome-control-center"))
+hl.bind(mainMod .. " + CTRL + N", hl.dsp.exec_cmd("hyprmod profile next"))
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd("hyprmod profile previous"))
 
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pavucontrol"))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -62,6 +67,10 @@ for i, key in ipairs(workspaceKeys) do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+-- Workspace 6 (scratch / overflow)
+hl.bind(mainMod .. " + Backspace", hl.dsp.focus({ workspace = 6 }))
+hl.bind(mainMod .. " + SHIFT + Backspace", hl.dsp.window.move({ workspace = 6 }))
 
 -- Example special workspace (scratchpad)
 --hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))

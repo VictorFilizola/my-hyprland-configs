@@ -65,3 +65,34 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+-- Pavucontrol: audio device selector — float + center
+hl.window_rule({
+   name = "pavucontrol-audio",
+   match = { class = "org.pulseaudio.pavucontrol" },
+
+   float = true,
+   size = "700 480",
+   move = "50% 50%",
+})
+
+-- Blueman: bluetooth manager — float + center
+hl.window_rule({
+   name = "blueman-float",
+   match = { class = "blueman-manager" },
+
+   float = true,
+   size = "700 500",
+   move = "50% 50%",
+})
+
+-- btop: system monitor — float + center
+hl.window_rule({
+   name = "btop-float",
+   match = { class = "btop-float" },
+
+   float = true,
+   size = "1100 700",
+   move = "50% 50%",
+})
+

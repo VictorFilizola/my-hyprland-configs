@@ -1,12 +1,28 @@
 {
-  "layer": "overlay",
-  "exclusive": "false",
+  "layer": "top",
   "position": "top",
-  "height": 30,
-  "spacing": 4,
-  "modules-left": ["hyprland/workspaces"],
+  "height": 32,
+  "spacing": 2,
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "tray"],
+  "modules-right": [
+    "cpu",
+    "temperature",
+    "custom/gpu",
+    "memory",
+    "disk",
+    "custom/uptime",
+    "pulseaudio",
+    "network",
+    "custom/settings",
+    "tray",
+  ],
+
+  "custom/launcher": {
+    "format": " 󱄅 ",
+    "on-click": "rofi -show drun -modi drun,window",
+    "tooltip": false,
+  },
 
   "hyprland/workspaces": {
     "format": "{name}",
@@ -15,26 +31,74 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%a %d %b  %H:%M}",
     "interval": 30,
-    "tooltip-format": "{:%A, %B %d}",
+    "on-click": "rofi -show calendar -modi \"calendar:~/.config/rofi/scripts/calendar.sh\"",
+    "tooltip-format": "{:%A, %B %d %Y}",
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5,
+    "tooltip": false,
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "format": " {temperatureC}°C",
+    "interval": 10,
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+  },
+
+  "custom/gpu": {
+    "exec": "nvidia-smi --query-gpu=temperature.gpu,utilization.gpu --format=csv,noheader,nounits | awk -F', ' '{printf \"󰢮 %s%%  %s°C\", $2, $1}'",
+    "interval": 10,
+    "tooltip": false,
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "interval": 10,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G ({percentage}%)",
+  },
+
+  "disk": {
+    "path": "/",
+    "format": " {used:0.1f}G ({percentage}%)",
+    "interval": 60,
+    "tooltip-format": "Disk: {used:0.1f}G / {total:0.1f}G ({percentage}%)",
+  },
+
+  "custom/uptime": {
+    "exec": "uptime -p | sed 's/up //'",
+    "interval": 60,
+    "tooltip": false,
   },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "🔇",
-    "format-icons": ["🔈", "🔉", "🔊"],
+    "format-muted": "󰝟",
+    "format-icons": ["", "", ""],
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower",
   },
 
   "network": {
-    "format-wifi": "🌐 {essid}",
-    "format-ethernet": "🌐",
-    "format-disconnected": "❌",
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰛳",
+    "format-disconnected": "󰤭",
     "tooltip-format": "{ipaddr}",
   },
 
   "tray": {
     "spacing": 10,
+  },
+
+  "custom/settings": {
+    "format": "  ",
+    "on-click": "hyprmod",
+    "tooltip": "Hyprland Settings",
   },
 }

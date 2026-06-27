@@ -1,64 +1,138 @@
-/* Colors: see ~/.config/hypr/colors.lua */
+  * {                                                                                                                                                                                                                                                     
+      border: none;                                                                                                                                                                                                                                       
+      border-radius: 0;                                                                                                                                                                                                                                   
+      font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;                                                                                                                                                                                    
+      font-size: 13px;                                                                                                                                                                                                                                    
+      min-height: 0;                                                                                                                                                                                                                                      
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  window#waybar {                                                                                                                                                                                                                                         
+      background: rgba(13, 13, 13, 0.85);                                                                                                                                                                                                                 
+      color: #ebdbb2;                                                                                                                                                                                                                                     
+      border-radius: 12px;                                                                                                                                                                                                                                
+      margin: 4px 8px 0 8px;                                                                                                                                                                                                                              
+      border-bottom: 2px solid rgba(235, 49, 49, 0.6);                                                                                                                                                                                                    
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #custom-launcher {                                                                                                                                                                                                                                      
+      font-size: 16px;                                                                                                                                                                                                                                    
+      padding: 0 10px 0 14px;                                                                                                                                                                                                                             
+      color: #eb3131;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #custom-launcher:hover {                                                                                                                                                                                                                                
+      text-shadow: 0 0 6px rgba(235, 49, 49, 0.8);                                                                                                                                                                                                        
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #workspaces button {                                                                                                                                                                                                                                    
+      padding: 0 4px;                                                                                                                                                                                                                                     
+      margin: 4px 2px;                                                                                                                                                                                                                                    
+      background: transparent;                                                                                                                                                                                                                            
+      color: #595959;                                                                                                                                                                                                                                     
+      border: none;                                                                                                                                                                                                                                       
+      border-radius: 10px;                                                                                                                                                                                                                                
+      min-width: 24px;                                                                                                                                                                                                                                    
+      min-height: 20px;                                                                                                                                                                                                                                   
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #workspaces button.active {                                                                                                                                                                                                                             
+      background: #eb3131;                                                                                                                                                                                                                                
+      color: #ffffff;                                                                                                                                                                                                                                     
+      border-radius: 10px;                                                                                                                                                                                                                                
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #workspaces button:hover {                                                                                                                                                                                                                              
+      background: rgba(235, 49, 49, 0.2);                                                                                                                                                                                                                 
+      color: #eb3131;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #clock {                                                                                                                                                                                                                                                
+      padding: 0 12px;                                                                                                                                                                                                                                    
+      color: #ebdbb2;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #clock:hover {                                                                                                                                                                                                                                          
+      color: #eb3131;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #cpu, #temperature, #custom-gpu, #memory, #disk, #custom-uptime {                                                                                                                                                                                       
+      padding: 0 8px;                                                                                                                                                                                                                                     
+      color: #a8a8a8;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #cpu:hover, #temperature:hover, #custom-gpu:hover,                                                                                                                                                                                                      
+  #memory:hover, #disk:hover, #custom-uptime:hover {                                                                                                                                                                                                      
+      color: #ebdbb2;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #temperature.critical {                                                                                                                                                                                                                                 
+      color: #eb3131;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #pulseaudio {                                                                                                                                                                                                                                           
+      padding: 0 8px;                                                                                                                                                                                                                                     
+      color: #ebdbb2;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #pulseaudio.muted {                                                                                                                                                                                                                                     
+      color: #595959;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #network {                                                                                                                                                                                                                                              
+      padding: 0 8px;                                                                                                                                                                                                                                     
+      color: #ebdbb2;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #network.disconnected {                                                                                                                                                                                                                                 
+      color: #eb3131;                                                                                                                                                                                                                                     
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #tray {                                                                                                                                                                                                                                                 
+      padding: 0 8px 0 4px;                                                                                                                                                                                                                               
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  #clock::before,                                                                                                                                                                                                                                         
+  #clock::after {                                                                                                                                                                                                                                         
+      content: " • ";                                                                                                                                                                                                                                     
+      color: #404040;                                                                                                                                                                                                                                     
+      font-weight: bold;                                                                                                                                                                                                                                  
+  }                                                                                                                                                                                                                                                       
+```                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+### ~/.config/rofi/scripts/calendar.sh                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                          
+```bash                                                                                                                                                                                                                                                   
+  #!/bin/bash                                                                                                                                                                                                                                             
+  STATE_FILE="/tmp/rofi-calendar-state"                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                          
+  if [ ! -f "$STATE_FILE" ]; then                                                                                                                                                                                                                         
+      echo "$(date +%Y) $(date +%m)" > "$STATE_FILE"                                                                                                                                                                                                      
+  fi                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                          
+  read YEAR MONTH < "$STATE_FILE"                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                          
+  show_calendar() {                                                                                                                                                                                                                                       
+      echo "$(cal --color=always -m "$MONTH" "$YEAR" | sed 's/^/  /')"                                                                                                                                                                                    
+      echo "---"                                                                                                                                                                                                                                          
+      printf "   Today    󰁍 Prev    󰁕 Next"                                                                                                                                                                                                              
+  }                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                          
+  if [ $# -eq 0 ]; then                                                                                                                                                                                                                                   
+      show_calendar                                                                                                                                                                                                                                       
+  else                                                                                                                                                                                                                                                    
+      case "$1" in                                                                                                                                                                                                                                        
+          *"Prev"*)                                                                                                                                                                                                                                       
+              [ "$MONTH" -eq 1 ] && echo "$((YEAR - 1)) 12" > "$STATE_FILE" \                                                                                                                                                                             
+                  || echo "$YEAR $((10#$MONTH - 1))" > "$STATE_FILE"                                                                                                                                                                                      
+              read YEAR MONTH < "$STATE_FILE"; show_calendar ;;                                                                                                                                                                                           
+          *"Next"*)                                                                                                                                                                                                                                       
+              [ "$MONTH" -eq 12 ] && echo "$((YEAR + 1)) 1" > "$STATE_FILE" \                                                                                                                                                                             
+                  || echo "$YEAR $((10#$MONTH + 1))" > "$STATE_FILE"                                                                                                                                                                                      
+              read YEAR MONTH < "$STATE_FILE"; show_calendar ;;                                                                                                                                                                                           
+          *"Today"*)                                                                                                                                                                                                                                      
+              echo "$(date +%Y) $(date +%m)" > "$STATE_FILE"                                                                                                                                                                                              
+              read YEAR MONTH < "$STATE_FILE"; show_calendar ;;                                                                                                                                                                                           
+          *) exit 0 ;;                                                                                                                                                                                                                                    
+      esac                                                                                                                                                                                                                                                
+  fi                                         
 
-* {
-  border: none;
-  border-radius: 0;
-  font-family: "JetBrains Mono", "Noto Sans", sans-serif;
-  font-size: 13px;
-  min-height: 0;
-}
-
-window#waybar:hover {
-  background: rgba(13, 13, 13, 0.85);
-  border-bottom: 2px solid rgba(235, 49, 49, 0.6);
-  opacity: 1;
-}
-
-/* Workspaces */
-#workspaces button {
-  padding: 0 10px;
-  background: transparent;
-  color: #595959;
-  border-bottom: 2px solid transparent;
-}
-
-#workspaces button.active {
-  color: #eb3131;
-  border-bottom: 2px solid #eb3131;
-}
-
-#workspaces button:hover {
-  background: rgba(235, 49, 49, 0.15);
-  color: #eb3131;
-}
-
-/* Clock */
-#clock {
-  padding: 0 12px;
-  color: #ebdbb2;
-}
-
-/* Pulseaudio */
-#pulseaudio {
-  padding: 0 10px;
-  color: #ebdbb2;
-}
-
-#pulseaudio.muted {
-  color: #595959;
-}
-
-/* Network */
-#network {
-  padding: 0 10px;
-  color: #ebdbb2;
-}
-
-#network.disconnected {
-  color: #eb3131;
-}
-
-/* Tray */
-#tray {
-  padding: 0 8px;
-}

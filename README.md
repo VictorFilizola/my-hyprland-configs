@@ -28,14 +28,19 @@ Mod key: `SUPER` (Windows key)
 | `SUPER + Q`                     | Close window                                     |
 | `SUPER + E`                     | File manager (nemo)                              |
 | `SUPER + Space`                 | App launcher (rofi)                              |
+| `SUPER + H`                     | Hyprland settings (hyprmod)                      |
+| `SUPER + Shift + H`             | System settings (gnome-control-center)           |
 | `SUPER + M`                     | Powermenu (wlogout)                              |
 | `SUPER + Escape`                | Lock screen (hyprlock)                           |
-| `SUPER + V`                     | Toggle float                                     |
+| `SUPER + G`                     | Toggle float + center (50% size)                 |
+| `SUPER + V`                     | Audio mixer (pavucontrol)                        |
 | `SUPER + P`                     | Toggle pseudo-tile                               |
 | `SUPER + J`                     | Toggle split direction                           |
 | `SUPER + Y/U/I/O/P`             | Switch workspace 1-5                             |
 | `SUPER + Shift + Y/U/I/O/P`     | Move window to workspace 1-5                     |
 | `SUPER + left/right`            | Previous/next workspace                          |
+| `SUPER + Ctrl + N`              | Next hyprmod profile                             |
+| `SUPER + Ctrl + P`              | Previous hyprmod profile                         |
 | `SUPER + Shift + arrows`        | Move focus                                       |
 | `SUPER + drag (LMB)`            | Move window                                      |
 | `SUPER + drag (RMB)`            | Resize window                                    |
@@ -82,6 +87,7 @@ Mod key: `SUPER` (Windows key)
 
 | Package       | Purpose                                             |
 | ------------- | --------------------------------------------------- |
+| `hyprmod`     | Hyprland settings GUI (AUR: `hyprmod`)               |
 | `hyprshot`    | Screenshot tool (AUR: `hyprshot` or `hyprshot-git`) |
 | `swappy`      | Screenshot annotation                               |
 | `hyprlock`    | Screen locker                                       |
@@ -95,6 +101,9 @@ Mod key: `SUPER` (Windows key)
 
 ```bash
 sudo pacman -S hyprland waybar swaync hypridle swaybg kitty nemo rofi-lbonn-wayland swappy hyprlock wireplumber playerctl wlogout network-manager-applet blueman swayosd
+
+# hyprmod (Hyprland settings GUI)
+paru -S hyprmod
 ```
 
 ## SwayOSD — systemd backend (required)
