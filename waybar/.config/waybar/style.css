@@ -1,0 +1,202 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 17px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #ebdbb2;
+}
+
+.modules-center {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    min-width: 52px;
+    min-height: 52px;
+}
+
+.modules-left,
+.modules-right {
+    background: transparent;
+    margin: 4px 0 0 0;
+    padding: 0;
+}
+
+/* Launcher (Arch) */
+#custom-launcher {
+    font-size: 44px;
+    padding: 0 4px;
+    margin: 0;
+    color: #eb3131;
+    font-weight: 800;
+    min-height: 52px;
+    min-width: 52px;
+}
+
+#custom-launcher:hover {
+    text-shadow: 0 0 6px rgba(235, 49, 49, 0.8);
+}
+
+/* Workspaces pill */
+#workspaces {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 0 20px 20px 0;
+    padding: 0 8px 0 0;
+    margin-right: 10px;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+}
+
+#workspaces button {
+    padding: 0 4px;
+    margin: 4px 2px;
+    background: transparent;
+    color: #ebdbb2;
+    border: none;
+    border-radius: 10px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: #eb3131;
+    font-weight: 800;
+}
+
+#workspaces button:hover {
+    background: rgba(235, 49, 49, 0.2);
+    color: #eb3131;
+}
+
+/* Clock + Workspaces merged pill */
+#custom-clock {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 20px;
+    padding: 0 4px 0 8px;
+    margin-right: 10px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+}
+
+#custom-clock:hover {
+    color: #eb3131;
+}
+
+/* Window — standalone pill */
+#custom-window {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 20px;
+    padding: 0 8px 0 4px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+}
+
+#custom-window.empty {
+    background: transparent;
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* System stats pill */
+#custom-cpu {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 20px 0 0 20px;
+    padding: 0 3px 0 8px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#custom-gpu,
+#memory {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 0;
+    padding: 0 3px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#disk {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 0;
+    padding: 0 8px 0 3px;
+    color: #ebdbb2;
+    margin-right: 10px;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#custom-cpu:hover, #custom-gpu:hover,
+#memory:hover, #disk:hover {
+    color: #ebdbb2;
+}
+
+/* Media — standalone pill between stats and audio */
+#custom-media {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 20px;
+    padding: 0 10px;
+    margin-right: 10px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 17px;
+}
+
+#custom-media.playing {
+    animation: media-glow 1s ease-in-out infinite alternate;
+}
+
+#custom-media.pw-stream {
+    animation: none;
+}
+
+@keyframes media-glow {
+    from { border-bottom-color: rgba(235, 49, 49, 0.4); }
+    to   { border-bottom-color: rgba(235, 49, 49, 1.0); }
+}
+
+/* Volume + utilities merged pill */
+#pulseaudio {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 20px 0 0 20px;
+    padding: 0 4px 0 10px;
+    margin-right: 0;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#custom-pavucontrol {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 0;
+    padding: 0 5px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#custom-bluetooth {
+    background: rgba(25, 25, 25, 0.45);
+    border-radius: 0 20px 20px 0;
+    padding: 0 10px 0 5px;
+    margin-right: 10px;
+    color: #ebdbb2;
+    border-bottom: 2px solid rgba(235, 49, 49, 0.6);
+    font-size: 19px;
+}
+
+#custom-pavucontrol:hover,
+#custom-bluetooth:hover {
+    color: #eb3131;
+}
+
+#pulseaudio.muted {
+    color: #ebdbb2;
+    font-size: 19px;
+}

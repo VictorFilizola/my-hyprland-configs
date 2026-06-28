@@ -1,0 +1,77 @@
+# === Hyprland Core ===
+hyprland
+hypridle
+hyprlock
+hyprpaper
+hyprpicker
+hyprshot
+hyprpolkitagent
+hyprcursor
+hyprlauncher
+
+# === Status Bar ===
+waybar
+
+# === Wallpaper & Notifications ===
+swaybg
+swaync
+swayosd
+
+# === App Launcher ===
+rofi
+wofi
+
+# === Terminal ===
+kitty
+vivid
+eza
+
+# === Shell ===
+fish
+fisher
+
+# === System Info ===
+fastfetch
+
+# === Screenshot & Clipboard ===
+grim
+slurp
+wl-clipboard
+
+# === Audio ===
+pipewire
+wireplumber
+pipewire-pulse
+pipewire-alsa
+pipewire-audio
+
+# === Theming (GTK/Qt) ===
+qt5ct
+qt6ct
+breeze
+breeze-gtk
+breeze-icons
+breeze-cursors
+
+# === Fonts ===
+ttf-jetbrains-mono-nerd
+ttf-fantasque-nerd
+ttf-meslo-nerd
+noto-fonts
+noto-fonts-emoji
+
+# === Apps ===
+nemo
+blueman
+pavucontrol
+network-manager-applet
+btop
+
+# === System ===
+polkit-kde-agent
+uwsm
+xdg-desktop-portal-hyprland
+power-profiles-daemon
+
+# === GTK Layers ===
+gst-plugin-pipewire

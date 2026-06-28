@@ -1,0 +1,7 @@
+[server]
+# Colors: see ~/.config/hypr/colors.lua
+style = "/home/vito/.config/swayosd/style.css"
+max_volume = 150
+min_brightness = 5
+show_percentage = true
+keyboard_backlight = true

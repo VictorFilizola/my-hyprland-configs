@@ -1,0 +1,5 @@
+# AUR packages needed for full setup.
+# Install with: paru -S --needed - < aurlist.txt
+# Or: yay -S --needed - < aurlist.txt
+
+wlogout

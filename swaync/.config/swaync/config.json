@@ -1,0 +1,47 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+  "layer": "overlay",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "notification-icon-size": 48,
+  "notification-body-wrap": true,
+  "notification-group-counts": true,
+  "notification-window-width": 350,
+  "timeout": 5,
+  "timeout-critical": 0,
+  "timeout-low": 8,
+  "fit-to-screen": true,
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-left": 0,
+  "control-center-margin-right": 0,
+  "notification-placement": "top",
+  "widgets": ["title", "dnd", "notifications", "mpris", "buttons-grid"],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "image-size": 32,
+      "image-radius": 6
+    },
+    "buttons-grid": {
+      "actions": [
+        { "label": "󰤄 Suspend", "command": "systemctl suspend" },
+        { "label": " Shutdown", "command": "hyprshutdown" },
+        { "label": " Reboot", "command": "systemctl reboot" },
+        { "label": " Logout", "command": "hyprctl dispatch exit" },
+        { "label": " Lock", "command": "hyprlock" }
+      ]
+    }
+  }
+}

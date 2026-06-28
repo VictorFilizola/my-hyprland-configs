@@ -39,3 +39,16 @@ luac.out
 *.x86_64
 *.hex
 
+# Claude Code
+.claude/
+
+# Backups
+*.bak
+hypr_backup/
+
+# Fish runtime state
+fish_variables
+
+# Waybar Claude artifacts
+waybar/.claude/
+

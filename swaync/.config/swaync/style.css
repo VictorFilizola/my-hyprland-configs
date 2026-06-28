@@ -1,0 +1,76 @@
+/* Colors: see ~/.config/hypr/colors.lua */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+.notification {
+  border-radius: 10px;
+  margin: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.notification-content {
+  background: rgba(30, 30, 30, 0.95);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(235, 49, 49, 0.4);
+}
+
+.notification-default-action:hover {
+  background: rgba(235, 49, 49, 0.1);
+}
+
+.notification-summary {
+  color: #eb3131;
+  font-weight: bold;
+}
+
+.notification-body {
+  color: #ebdbb2;
+}
+
+.close-button {
+  background: #eb3131;
+  color: #ebdbb2;
+  border-radius: 4px;
+}
+
+/* Control Center */
+.control-center {
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(235, 49, 49, 0.3);
+  border-radius: 12px;
+  margin: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.widget-title {
+  color: #eb3131;
+  font-weight: bold;
+  padding: 12px 16px;
+}
+
+.widget-title button {
+  background: transparent;
+  border: 1px solid rgba(235, 49, 49, 0.3);
+  border-radius: 6px;
+  color: #eb3131;
+}
+
+.widget-title button:hover {
+  background: rgba(235, 49, 49, 0.15);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid rgba(235, 49, 49, 0.25);
+  border-radius: 8px;
+  color: #ebdbb2;
+  padding: 8px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: rgba(235, 49, 49, 0.12);
+  border-color: #eb3131;
+}
