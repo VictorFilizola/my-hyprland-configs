@@ -1,6 +1,6 @@
 # my-hyprland-configs
 
-Personal Hyprland environment — Lua-based config, dwindle layout, multimedia OSD, Waybar bar, and full desktop replication.
+Personal Hyprland environment configs alongside all of my basic environment apps
 
 ## Quick Replicate
 
@@ -70,44 +70,46 @@ Mod key: `SUPER` (Windows key)
 
 ### Daemons (auto-started in startup.lua)
 
-| Package                                 | Purpose                                                 |
-| --------------------------------------- | ------------------------------------------------------- |
-| `waybar`                                | Status bar                                              |
-| `swayosd`                               | Volume/brightness OSD (swayosd-client + swayosd-server) |
-| `swaync`                                | Notification daemon                                     |
-| `hypridle`                              | Idle management (auto-lock, suspend)                    |
-| `swaybg`                                | Wallpaper setter                                        |
-| `network-manager-applet` (`nm-applet`)  | WiFi network tray applet                                |
-| `blueman` (`blueman-applet`)            | Bluetooth tray applet + manager                         |
+| Package                                | Purpose                                                 |
+| -------------------------------------- | ------------------------------------------------------- |
+| `waybar`                               | Status bar                                              |
+| `swayosd`                              | Volume/brightness OSD (swayosd-client + swayosd-server) |
+| `swaync`                               | Notification daemon                                     |
+| `hypridle`                             | Idle management (auto-lock, suspend)                    |
+| `swaybg`                               | Wallpaper setter                                        |
+| `network-manager-applet` (`nm-applet`) | WiFi network tray applet                                |
+| `blueman` (`blueman-applet`)           | Bluetooth tray applet + manager                         |
 
 ### Applications
 
-| Package                        | Purpose                                        |
-| ------------------------------ | ---------------------------------------------- |
-| `kitty`                        | Terminal emulator                              |
-| `nemo`                         | File manager                                   |
-| `rofi`                         | App launcher                                   |
-| `brave`                        | Web browser                                    |
+| Package | Purpose           |
+| ------- | ----------------- |
+| `kitty` | Terminal emulator |
+| `nemo`  | File manager      |
+| `rofi`  | App launcher      |
+| `brave` | Web browser       |
 
 ### Utilities
 
-| Package       | Purpose                                             |
-| ------------- | --------------------------------------------------- |
-| `hyprshot`    | Screenshot tool                                     |
-| `swappy`      | Screenshot annotation                               |
-| `hyprlock`    | Screen locker                                       |
-| `wlogout`     | Powermenu (logout/reboot/shutdown/suspend/lock)     |
-| `wireplumber` | Audio routing (provides `wpctl`)                    |
-| `playerctl`   | Media player control                                |
+| Package       | Purpose                                         |
+| ------------- | ----------------------------------------------- |
+| `hyprshot`    | Screenshot tool                                 |
+| `swappy`      | Screenshot annotation                           |
+| `hyprlock`    | Screen locker                                   |
+| `wlogout`     | Powermenu (logout/reboot/shutdown/suspend/lock) |
+| `wireplumber` | Audio routing (provides `wpctl`)                |
+| `playerctl`   | Media player control                            |
 
-### Install (CachyOS / Arch)
+### Install (Arch)
 
 **Automated:**
+
 ```bash
 ./bootstrap.sh
 ```
 
 **Manual:**
+
 ```bash
 sudo pacman -S --needed - < pkglist.txt
 cd stow && for d in */; do stow -t "$HOME" "$d"; done
@@ -117,24 +119,33 @@ cd stow && for d in */; do stow -t "$HOME" "$d"; done
 
 Non-Hyprland configs managed via GNU Stow under `stow/`:
 
-| Package | Contents |
-|---------|----------|
-| `hypr` | Hyprland compositor — Lua modules + hypridle + hyprlock |
-| `waybar` | Status bar config + scripts (clock, cpu, media, window) |
-| `rofi` | App launcher + squared-material-red theme |
-| `kitty` | Terminal emulator + VSCode_Dark theme |
-| `fastfetch` | System info (builtin distro logo, optional custom art) |
-| `fish` | Shell config, functions, prompt, color scheme |
-| `swaync` | Notification daemon + control center |
-| `swayosd` | Volume/brightness OSD |
-| `slurp` | Screenshot region selector (red border) |
-| `uwsm` | NVIDIA env vars for Wayland session |
-| `gtk` | GTK2/3/4 theme (Breeze-Dark) |
-| `qt` | Qt5/Qt6 theme (CosmicDark) |
-| `xsettingsd` | Theme sync daemon |
-| `icons` | Sweet-cursors cursor theme |
-| `nvidia` | GPU power mode settings |
-| `wallpapers` | Wallpaper images |
+| Package      | Contents                                                |
+| ------------ | ------------------------------------------------------- |
+| `hypr`       | Hyprland compositor — Lua modules + hypridle + hyprlock |
+| `waybar`     | Status bar config + scripts (clock, cpu, media, window) |
+| `rofi`       | App launcher + squared-material-red theme               |
+| `kitty`      | Terminal emulator + VSCode_Dark theme                   |
+| `fastfetch`  | System info (builtin distro logo, optional custom art)  |
+| `fish`       | Shell config, functions, prompt, color scheme           |
+| `swaync`     | Notification daemon + control center                    |
+| `swayosd`    | Volume/brightness OSD                                   |
+| `slurp`      | Screenshot region selector (red border)                 |
+| `uwsm`       | NVIDIA env vars for Wayland session                     |
+| `gtk`        | GTK2/3/4 theme (Breeze-Dark)                            |
+| `qt`         | Qt5/Qt6 theme (CosmicDark)                              |
+| `xsettingsd` | Theme sync daemon                                       |
+| `icons`      | Sweet-cursors cursor theme                              |
+| `nvidia`     | GPU power mode settings                                 |
+| `wallpapers` | Wallpaper images                                        |
+
+## OBS - Activate Websocket for Waybar RECORDING Status
+
+- Opens OBS
+- Go to "Tools"
+- Click Websocket Server "Seetings"
+- Check the tick box at "Enable Websocket server"
+
+The script will automatically auth OBS to use its recording status with it's uptime
 
 ## SwayOSD — systemd backend (required)
 
