@@ -12,6 +12,36 @@ cd my-hyprland-configs
 
 Installs all packages, stows configs, enables services. Reboot and Hyprland is ready.
 
+## OBS - Activate Websocket for Waybar recording Status
+
+- Open OBS
+- Go to "Tools"
+- Click "Websocket Server Settings"
+- Check the tick-box at "Enable Websocket server"
+
+The script will automatically auth OBS to use its recording status with it's uptime
+
+## SwayOSD — systemd backend (required)
+
+Volume/brightness OSD uses SwayOSD. It has two parts:
+
+- `swayosd-libinput-backend` — **system** service (root), reads input devices
+- `swayosd-server` — **user** process, shows OSD + changes volume
+
+The systemd backend must be **enabled** or OSD + volume keys silently fail:
+
+```bash
+sudo systemctl enable --now swayosd-libinput-backend.service
+```
+
+Verify:
+
+```bash
+systemctl is-active swayosd-libinput-backend.service  # → active
+```
+
+No OSD without this. Volume keys do nothing without this.
+
 ## Files
 
 | File              | Purpose                                                                                         |
@@ -137,36 +167,6 @@ Non-Hyprland configs managed via GNU Stow under `stow/`:
 | `icons`      | Sweet-cursors cursor theme                              |
 | `nvidia`     | GPU power mode settings                                 |
 | `wallpapers` | Wallpaper images                                        |
-
-## OBS - Activate Websocket for Waybar RECORDING Status
-
-- Opens OBS
-- Go to "Tools"
-- Click Websocket Server "Seetings"
-- Check the tick box at "Enable Websocket server"
-
-The script will automatically auth OBS to use its recording status with it's uptime
-
-## SwayOSD — systemd backend (required)
-
-Volume/brightness OSD uses SwayOSD. It has two parts:
-
-- `swayosd-libinput-backend` — **system** service (root), reads input devices
-- `swayosd-server` — **user** process, shows OSD + changes volume
-
-The systemd backend must be **enabled** or OSD + volume keys silently fail:
-
-```bash
-sudo systemctl enable --now swayosd-libinput-backend.service
-```
-
-Verify:
-
-```bash
-systemctl is-active swayosd-libinput-backend.service  # → active
-```
-
-No OSD without this. Volume keys do nothing without this.
 
 ## Customization
 
